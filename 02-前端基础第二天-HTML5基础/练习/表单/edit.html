@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+</head>
+<body>
+    <div>
+        <table align="center">
+            <caption><h2>欢迎来到修改页面</h2></caption>
+            <tr>
+                <td><label for="username">姓名：</label></td>
+                <td>
+                    <input type="text" name="username" id="username" placeholder="jack">
+                </td>
+            </tr>
+            <tr>
+                <td>性别：</td>
+                <td>
+                    <input type="radio" name="sex" id="woman"><label for="woman">女士</label> 
+                    <input type="radio" name="sex" id="man"><label for="man">男士</label>
+                </td>
+            </tr>
+            <tr>
+                <td>学历</td>
+                <td>
+                    <select name="educationalBackground">
+                        <option value="幼儿园" selected>幼儿园</option>
+                        <option value="小学">小学</option>
+                        <option value="初中">初中</option>
+                        <option value="高中">高中</option>
+                        <option value="本科">本科</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>个人描述：</td>
+                <td>
+                    <textarea name="selfIntroduction"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox">
+                    不要公开我的个人信息
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="保存">
+                    <input type="reset" value="重填">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

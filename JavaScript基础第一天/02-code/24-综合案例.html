@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>综合案例-打印订单信息</title>
+    <style>
+        table,
+        table th,
+        table td {
+            border: 1px solid #000;
+            
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        let commodityName = prompt('请输入商品名称');
+        let price = +prompt('请输入商品价格');
+        let count = +prompt('请输入想要购买的商品数量');
+        let address = prompt('请输入收货地址');
+        let aggregate = price * count;
+        let table = 
+        `<table>
+            <thead><caption><h2>订单确认</h2></caption></thead>
+            <tbody>
+                <tr>
+                    <th>商品名称</th>
+                    <th>商品价格</th>
+                    <th>商品数量</th>
+                    <th>总价</th>
+                    <th>收货地址</th>
+                </tr>
+                <tr>
+                    <td>${commodityName}</td>
+                    <td>${price}元</td>
+                    <td>${count}</td>
+                    <td>${aggregate}元</td>
+                    <td>${address}</td>
+                </tr>
+            </tbody>
+        </table>`
+        document.write(table);
+    </script>
+</body>
+</html>

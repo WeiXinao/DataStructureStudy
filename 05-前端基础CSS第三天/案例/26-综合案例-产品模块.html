@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>综合案例-产品模块</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #f5f5f5;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        .box {
+            width: 298px;
+            height: 415px;
+            background-color: #ffffff;
+            /* 让块级的盒子左右居中对齐 */
+            margin: 100px auto;
+        }
+        .box img {
+            width: 298px;
+        }
+        .box p, .box div {
+            font-size: 14px;
+            line-height: 24px;
+            margin: 0 30px 0;
+        }
+        .box div {
+            height: 24px;
+            line-height: 24px;
+        }
+        .box .comment {   
+            height: 70px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .user-info {
+            color: #b0b0b0;
+            padding-bottom: 10px;
+        }
+        .goods-name {
+            display: inline-block;
+            padding-right: 10px;
+            width: 170px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            border-right: 3px solid #e1e7f1;
+        }
+        .goods h4 {
+            font-size: 14px;
+            font-weight: 400;
+        }
+        .box .user-info {
+            font-size: 12px;
+        }
+        .price {
+            display: inline-block;
+            height: 24px;
+            float: right;
+            color: #ff6700;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <a href="#"><img src="./images/img.jpg" alt="earphone"></a>
+        <p class="comment"><a href="#">快递牛，整体不错蓝牙可以说秒连。红米给力</a></p>
+        <p class="user-info">
+            来自于 <span>117384232</span> 的评价
+        </p>
+        <div class="goods">
+            <h4 class="goods-name"><a href="#">Redmi AirDots真无线蓝牙耳机</a></h4> 
+            <h4 class="price">9.99元</h4>
+        </div>
+    </div>
+</body>
+</html>

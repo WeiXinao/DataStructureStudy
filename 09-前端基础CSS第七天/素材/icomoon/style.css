@@ -1,0 +1,112 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?5kmduw');
+  src:  url('fonts/icomoon.eot?5kmduw#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?5kmduw') format('truetype'),
+    url('fonts/icomoon.woff?5kmduw') format('woff'),
+    url('fonts/icomoon.svg?5kmduw#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-codepen:before {
+  content: "\e900";
+}
+.icon-evernote:before {
+  content: "\e901";
+  color: #00a82d;
+}
+.icon-github1:before {
+  content: "\e902";
+}
+.icon-huawei:before {
+  content: "\e903";
+  color: #f00;
+}
+.icon-java:before {
+  content: "\e904";
+  color: #007396;
+}
+.icon-mozillafirefox:before {
+  content: "\e905";
+  color: #ff7139;
+}
+.icon-nintendoswitch:before {
+  content: "\e906";
+  color: #e60012;
+}
+.icon-notion:before {
+  content: "\e907";
+}
+.icon-obsstudio:before {
+  content: "\e908";
+}
+.icon-codio:before {
+  content: "\e90a";
+  color: #4574e0;
+}
+.icon-csharp:before {
+  content: "\e90b";
+  color: #239120;
+}
+.icon-gnuicecat:before {
+  content: "\e90c";
+  color: #002f5b;
+}
+.icon-playstation:before {
+  content: "\e90d";
+  color: #003791;
+}
+.icon-xbox:before {
+  content: "\e90e";
+  color: #107c10;
+}
+.icon-home2:before {
+  content: "\e909";
+}
+.icon-location:before {
+  content: "\e947";
+}
+.icon-arrow-up2:before {
+  content: "\ea3a";
+}
+.icon-arrow-right2:before {
+  content: "\ea3c";
+}
+.icon-arrow-down2:before {
+  content: "\ea3e";
+}
+.icon-arrow-left2:before {
+  content: "\ea40";
+}
+.icon-spotify:before {
+  content: "\ea94";
+}
+.icon-youtube2:before {
+  content: "\ea9e";
+}
+.icon-steam2:before {
+  content: "\eaad";
+}
+.icon-github:before {
+  content: "\eab0";
+}
+.icon-appleinc:before {
+  content: "\eabe";
+}

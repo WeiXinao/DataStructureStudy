@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #000;
+    color: #666;
+    text-align: center;
+}
+
+audio {
+    width: 450px;
+    margin: 30px 0;
+}
+
+.container {
+    height: 420px;
+    overflow: hidden;
+    /* border: 2px solid #fff; */
+}
+
+.container ul {
+    /* border: 2px solid #fff; */
+    transition: 0.6s;
+    list-style: none;
+}
+
+.container li {
+    height: 30px;
+    /* border: 2px solid #fff; */
+    line-height: 30px;
+    /*
+        为什么把过渡放到这里而不放到 .container li.active 中？
+        因为放到这里，这个选择器会一种选中 li 元素，因此，在文字变大和变小时，都会有过渡。
+        而将过渡放到 container li.active 但元素不再有 class=".active" 属性时，文字会瞬间变小，失去过渡效果
+        放到此处，文字无论变大变小，都有过渡效果。 
+    */
+    transition: 0.6s;
+}
+
+.container li.active {
+    color: #fff;
+    /* font-size: 2em; */
+    transform: scale(1.2);
+}

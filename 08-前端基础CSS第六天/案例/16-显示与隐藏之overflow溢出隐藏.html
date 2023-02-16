@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显示与隐藏之overflow溢出隐藏</title>
+    <style>
+        .info {
+            /* overflow: visible; */
+            /* scroll 溢出的部分显示滚动条，不溢出也显示滚动条 */
+            /* overflow: scroll; */
+            /* overflow: hidden; */
+            /* auto 溢出的时候才显示滚动条，不溢出显示滚动条 */
+            /* overflow: auto; */
+            /* 如果有定位的盒子，请慎用 overflow: hidden 因为它会隐藏多余的部分 */
+            width: 200px;
+            height: 200px;
+            border: 3px solid pink;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="info">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel excepturi consectetur, nisi vitae veritatis illum dignissimos quo cum hic alias aspernatur saepe, illo reiciendis 
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>行内块的巧妙运用</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0  ;
+        }
+        .box {
+            text-align: center;
+            font-size: 14px;
+        }
+        .box a {
+            display: inline-block;
+            height: 36px;
+            padding: 0 14px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 36px;
+            text-decoration: none;
+            color: #333;
+        }
+        .box .current,
+        .box .ellipses {
+            border: none;
+            background-color: #fff;
+        }
+        .box input {
+            height: 36px;
+            width: 58px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            padding: 0 5px;
+            text-align: center;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <a href="#">&lt;&lt;上一页</a>
+        <a href="#" class="current">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#" class="ellipses">...</a>
+        <a href="#">下一页&gt;&gt;</a>
+        共<span>10</span>页
+        到第
+        <input type="text">
+        页
+        <a href="#">确定</a>
+    </div>
+</body>
+
+</html>

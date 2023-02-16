@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS权重注意点</title>
+    <style>
+        /* #father 的权重为 100 */
+        #father {
+            color: red;
+        }
+        /* p 继承的权重为 0 */
+        /* 所以，以后我们看标签到底执行哪个样式，
+        就先看这个标签有没有被直接被选出来。*/
+        p {
+            color: pink;
+        }
+        /*
+            p 标签虽然继承了 #father 的 color: red; 
+            但是 继承的权重为 0，元素选择器的权重为 1，
+            所以，p 标签的中的文字颜色为pink。
+        */
+        body {
+            color: red;
+        }
+        /* a 链接浏览器默认指定了一个样式->蓝色的、有下划线 
+        a {color: blue; text-decoration: underline;} */
+        a {
+            color: green;
+        }
+        /* 根据 CSS 的层叠性，我们的样式层叠了
+        浏览器默认样式，a 的颜色就发生了改变 */
+    </style>
+</head>
+<body>
+    <div id="father">
+        <p>Lorem ipsum dolor sit.</p>
+        <a href="#">我的单独的样式</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,292 @@
+/* 首页专有模块 main */
+.main {
+    height: 455px;
+    margin: 10px 0 0 219px;
+}
+
+.focus {
+    width: 721px;
+    height: 100%;
+    background-color: skyblue;
+}
+
+.newsflash {
+    width: 250px;
+    height: 100%;
+}
+
+.news {
+    height: 165px;
+    border: 1px solid #e4e4e4;
+    color: #333;
+}
+
+.news-hd {
+    height: 33px;
+    border-bottom: 1px dotted #e4e4e4;
+    padding: 0 15px;
+    line-height: 31px;
+    font-size: 14px;
+}
+
+.news-hd h4 {
+    font-weight: 400;
+}
+
+.news-hd a::after {
+    content: '\e920';
+    font-family: "icomoon";
+    margin-left: 3px;
+    vertical-align: middle;
+}
+
+.news-bd {
+    padding: 5px 15px;
+    font-size: 12px;
+    line-height: 24px;
+}
+
+.news-bd ul li {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.news-bd span {
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.lifeservice {
+    height: 209px;
+}
+
+.lifeservice table {
+    width: 100%;
+    height: 100%;
+    margin-top: -1px;
+}
+
+
+.lifeservice table, 
+.lifeservice td {
+    border-collapse: collapse;
+}
+
+.lifeservice table tr td {
+    width: 64px;
+    height: 70px;
+    border: 1px solid #e4e4e4;  
+}
+
+.lifeservice table tr td a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
+
+.lifeservice a h5 {
+    width: 25px;
+    height: 30px;
+    background-color: greenyellow;
+    background: url(../images/icons.png) no-repeat;
+    margin: 10px auto 6px;
+}
+
+.lifeservice table tr:nth-child(1) td:nth-child(1)  a h5 {
+    background-position: -17px -14px;
+}
+
+.lifeservice table tr:nth-child(1) td:nth-child(2) {
+    position: relative;    
+}
+
+.lifeservice table tr:nth-child(1) td:nth-child(2) a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12px;
+    height: 15px;
+    background: url(../images/discount.png) no-repeat;
+
+}
+
+.lifeservice table tr:nth-child(1) td:nth-child(2)  a h5 {
+    background-position: -79px -14px;
+}
+
+.lifeservice table tr:nth-child(1) td:nth-child(3) a h5 {
+    background-position: -142px -14px;
+}
+
+.lifeservice table tr:nth-child(1) td:nth-child(4) a h5 {
+    background-position: -205px -14px;
+}
+
+.lifeservice table tr:nth-child(2) td:nth-child(1) a h5 {
+    background-position: -16px -84px;
+}
+
+.lifeservice table tr:nth-child(2) td:nth-child(2)  a h5 {
+    background-position: -79px -84px;
+}
+
+.lifeservice table tr:nth-child(2) td:nth-child(3) a h5 {
+    background-position: -143px -84px;
+}
+
+.lifeservice table tr:nth-child(2) td:nth-child(4) a h5 {
+    background-position: -205px -84px;
+}
+
+.lifeservice table tr:nth-child(3) td:nth-child(1)  a h5 {
+    background-position: -16px -156px;
+}
+
+.lifeservice table tr:nth-child(3) td:nth-child(2)  a h5 {
+    background-position: -79px -156px;
+}
+
+.lifeservice table tr:nth-child(3) td:nth-child(3) a h5 {
+    background-position: -140px -156px;
+}
+
+.lifeservice table tr:nth-child(3) td:nth-child(4) a h5 {
+    background-position: -205px -156px;
+}
+
+.bargain {
+    height: 81px;
+    padding-top: 6px;
+}
+
+/* 推荐模块 */
+.recmd {
+    height: 163px;
+    margin-top: 11px;
+
+}
+
+.recmd-hd {
+    width: 206px;
+    height: 100%;
+}
+
+.recmd-bd {
+    width: 994px;
+    height: 100%;
+    background-color: #ebebeb;
+}
+
+.recmd-bd ul li {
+    float: left;
+    width: 248px;
+    height: 100%;
+}
+
+.recmd-bd ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.recmd-bd ul li:nth-child(-n+3) a::after {
+    content: '';
+    display: block;
+    float: right;
+    height: 143px;
+    border-right: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+.recmd-bd ul li:nth-child(-n+3) a img {
+    width: calc(100% - 1px);
+    height: 100%;
+}
+
+.recmd-bd ul li a img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 楼层区 */
+/* 家用电器模块 */
+.appliance .box-hd {
+    height: 30px;
+    border-bottom: 2px solid #c81623;
+    margin-top: 27px;
+}
+
+.box-hd h3 {
+    font-size: 18px;
+    font-weight: 400px;
+    color: #c81623;
+}
+
+.tab_list ul li {
+    float: left;
+    line-height: 30px;
+}
+
+.tab_list  ul li a {
+    margin: 0 15px;
+}
+
+.appliance .box-bd {
+    height: 360px;
+    background-color: pink;
+}
+
+.tab_list_item>div {
+    float: left;
+    height: 360px;
+}
+.col_210 {
+    width: 210px;
+    background-color: #f9f9f9;
+}
+
+.col_210 ul li {
+    float: left;
+    width: 88px;
+    height: 33px;
+    border-bottom: 1px solid #ededed;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 33px;
+}
+
+.col_210 ul li:nth-child(2n - 1) {
+    margin-left: 10px;
+}
+
+.col_210>a {
+    display: block;
+    height: 260px;
+}
+
+.col_210 a img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.col_329 {
+    width: 329px;
+}
+
+.col_220 {
+    width: 220px;
+}
+
+.col_221 {
+    width: 221px;
+}
+
+
+
+

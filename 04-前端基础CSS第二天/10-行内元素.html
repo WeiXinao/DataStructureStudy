@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显示模式之行内元素</title>
+    <style>
+        span {
+            width: 100px;
+            height: 100px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <span>Lorem ipsum dolor sit.</span>
+    <strong>Lorem ipsum dolor sit amet.</strong>
+    <span>Lorem ipsum dolor sit.</span>
+    <strong>Lorem ipsum dolor sit amet.</strong>
+    <!-- 
+        注意：
+        1. 链接中不能再放链接
+        2. 特殊情况：<a> 里面可以放块级元素，但是给 <a> 转换一下块级模式最安全  
+    -->
+    <a href="#"></a>
+</body>
+</html>

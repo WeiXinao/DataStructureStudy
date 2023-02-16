@@ -1,0 +1,418 @@
+/* common begin */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f3f5f7;
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 清除浮动 */
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+/* common end */
+
+/* header begin */
+.header {
+    height: 42px;
+    /* 注意此地方会层叠 .wrapper 里面的 margin */
+    margin: 30px auto;
+}
+
+.logo {
+    float: left;
+    width: 197px;
+    height: 42px;
+}
+
+.nav {
+    float: left;
+    margin-left: 70px;
+}
+
+.nav ul li a {
+    display: block;
+    height: 40px;
+    padding: 0 8px;
+    line-height: 40px;
+    font-size: 18px;
+    color: #050505;
+}
+
+.nav ul li {
+    float: left;
+    margin-right: 28px;
+}
+
+.nav ul li:hover {
+    border-bottom: 2px solid #00a4ff;
+}
+
+.search {
+    float: left;
+    width: 412px;
+    height: 42px;
+    margin-left: 58px;
+}
+
+.search input {
+    float: left;
+    width: 322px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    border-right: 0;
+    padding: 0 19px;
+    line-height: 40px;
+    font-size: 14px;
+}
+
+.search button {
+    float: left;
+    width: 50px;
+    height: 42px;
+    /* 按钮 button 默认有个边框，需要我们手动去掉  */
+    border: 0;
+    background: #00a4ff url(./images/fa-search.png);
+    cursor: pointer;
+}
+
+.user {
+    float: right;
+    height: 42px;
+    margin-right: 36px;
+    line-height: 42px;
+}
+
+.user img {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-right: 6px;
+    margin-top: 6px;
+}
+
+.user p {
+    float: left;
+    font-size: 14px;
+    color: #666;
+}
+/* header end */
+
+/* banner begin */
+.banner {
+    height: 420px;
+    background-color: #1c036c;
+}
+
+.banner .wrapper {
+    height: 420px;
+    background-color: pink;
+    background: url(./images/banner2.png) no-repeat top center;
+}
+
+.subnav {
+    float: left;
+    width: 190px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.subnav ul {
+    padding: 5px 20px 0 20px;
+}
+
+.subnav li {
+    height: 45px;
+}
+
+.subnav li a {
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.subnav li a:hover {
+    color: #00b4ff;
+}
+
+.subnav li a:after {
+    content: "";
+    display: block;
+    float: right;   
+    width: 6px;
+    height: 45px;
+    background: url(./images/right-arrow.png) no-repeat center center;
+}
+
+.subnav li a:hover::after {
+    background: url(./images/right-arrow-blue.png) no-repeat center center;
+}
+
+.course {
+    float: right;
+    width: 230px;
+    height: 300px;
+    /* 浮动的盒子不会有外边距合并的问题 */
+    margin: 50px;
+}
+
+.course h3 {
+    height: 50px;
+    background-color: #9bceea;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+}
+
+.content {
+    box-sizing: border-box;
+    height: 250px;
+    background-color: #fff;
+    padding: 8px 20px;
+}
+
+.content ul li {
+    height: 48px;
+    border-bottom: 1px solid #eaeaea;
+    padding-top: 12px;
+}
+
+.course ul li p:nth-child(1) {
+    font-size: 16px;
+    color: #4e4e4e;
+}
+
+.course ul li p:nth-child(2) {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.course ul li p span:nth-child(2) {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.content button {
+    width: 100%;
+    height: 40px;
+    margin-top: 6px;
+    border: 1px solid #22b0ff;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    color: #00a4ff;
+    cursor: pointer;
+}
+/* banner end */
+
+/* 精辟推荐模块开始 */
+.goods {
+    box-sizing: border-box;
+    height: 60px;
+    margin-top: 8px;
+    padding: 0 35px;
+    background-color: #fff;
+    box-shadow: 0 2px 3px 0px rgba(0, 0, 0, .1);
+    /* 行高会继承，会继承给三个孩子 */
+    line-height: 60px;
+    font-size: 16px;
+}
+
+.goods h3 {
+    float: left;
+    padding-right: 39px;
+    color: #00a4ff;
+}
+
+.goods ul li {
+    float: left;
+    height: 60px;
+}
+
+.goods ul li a {
+    padding:  0 39px;
+    border-left: 1px solid #bfbfbf;
+    color: #050505;
+}
+
+.goods .modify {
+    float: right;
+    line-height: 60px;
+    font-size: 14px;
+    color: #00a4ff;
+}
+/* 精辟推荐模块结束 */
+
+/* box核心内容区域开始 */
+.box {
+    margin-top: 37px;
+}
+
+.box-head {
+    height: 20px;
+    margin-bottom: 20px;
+    line-height: 20px;
+}
+
+
+.box-head .recommend {
+    float: left;
+    font-size: 20px;
+    font-weight: 400;
+    color: #494949;
+}
+
+.box-head .more {
+    float: right;
+    margin-right: 32px;
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.box-body ul li {
+    float: left;
+    height: 270px;
+    width: 229px;
+    margin-right: 13px;
+    background-color: #fff;
+}
+
+.box-body ul li:hover {
+    box-shadow: 0 2px 3px 0px rgba(0, 0, 0, .1);
+}
+
+.box .box-body ul li:nth-child(5n) {
+    margin-right: 0;
+}
+
+/* 或者 */
+
+/* 把 li 的父亲 ul 修改的足够宽一行能装开5个盒子就不会换行了 */
+/* .box .box-body ul {
+    width: 1225px;
+} 
+
+.box-body ul li {
+    float: left;
+    height: 270px;
+    width: 228px;
+    margin-right: 15px;
+    background-color: #fff;
+} */
+
+.box-body ul li img {
+    width: 229px;
+    height: 155px;
+}
+
+.box-body ul li div {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 17px 20px;
+}
+
+.box-body ul li div h6 {
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #050505;
+    margin-bottom: 15px;
+}
+
+.box-body ul li div p {
+    font-size: 12px;
+    color: #999;
+}
+
+.box-body ul li div span:nth-child(1) {
+    color: #ff7c2d;
+}
+
+.box-body ul li {
+    margin-bottom: 14px;
+}
+.box-body ul li:nth-child(n+5) {
+    margin-bottom: 0;
+}
+/* box核心内容区域结束 */
+
+/* footer模块开始 */
+.footer {
+    height: 418px;
+    margin-top: 40px;
+    background-color: #fff;
+}
+
+.footer .wrapper {
+    padding-top: 33px;
+}
+
+.copyright {
+    float: left;
+}
+
+.copyright p {
+    margin: 25px 0 17px 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.copyright a {
+    display: block;
+    width: 118px;
+    height: 34px;
+    border: 1px solid #00a4ff;
+    text-align: center;
+    line-height: 34px;
+    font-size: 16px;
+    color: #00a4ff;
+    
+}
+
+.links {
+    float: right;
+    padding-right: 32px;
+}
+
+.links dl {
+    float: right;
+    margin-left: 154px;
+    color: #333;
+}
+
+.links dl dt {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.links dl dd a {
+    font-size: 12px;
+    color: #333;
+}

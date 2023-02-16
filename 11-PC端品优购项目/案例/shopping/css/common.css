@@ -1,0 +1,386 @@
+/* 声明字体图标，这里一定要注意路径的变化 */
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?tomleg');
+    src:  url('../fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?tomleg') format('truetype'),
+      url('../fonts/icomoon.woff?tomleg') format('woff'),
+      url('../fonts/icomoon.svg?tomleg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+/* 版心 */
+.wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.style_red {
+    color: #c81623;
+}
+
+.style_margin_right_12 {
+    margin-right: 12px;
+}
+
+
+/* 快捷导航模块 */
+.shortcut {
+    height: 31px;
+    background-color: #f1f1f1;
+    line-height: 31px;
+}
+
+.shortcut ul li {
+    float: left;
+}
+
+/* 选择所有偶数的 li */
+.shortcut .fr ul li:nth-child(2n) {
+    height: 12px;
+    border-left: 1px solid #666;
+    margin: 9px 13px;
+}
+.arrow-icon::after {
+    content: '\e91e';
+    font-family: "icomoon";
+    margin-left: 8px;
+}
+
+/* header 头部制作 */
+.header {
+    position: relative;
+    height: 105px;
+}
+
+.logo {
+    position: absolute;
+    top: 25px;
+    width: 171px;
+    height: 61px;
+    
+}
+
+.logo a {
+    display: block;
+    width: 171px;
+    height: 61px;
+    background: url(../images/logo.png) no-repeat;
+    /* 京东的做法 */
+    /* font-size: 0; */
+    /* 淘宝的做法：让文字隐藏 */
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+/* search 搜索模块 */
+.search {
+    position: absolute;
+    top: 25px;
+    left: 347px;
+    width: 538px;
+    height: 36px;
+    border: 2px solid #b1191a;
+}
+
+.search input[type=search] {
+    float: left;
+    width: 454px;
+    height: 100%;
+    padding: 10px;
+}
+
+.search input::placeholder {
+    font-size: 14px;
+    color: #666666;
+}
+
+.search button {
+    float: left;
+    width: 80px;
+    height: 100%;
+    background-color: #b1191a;
+    font-size: 16px;
+    line-height: 32px;
+    color: #fff;
+}
+
+/* hotwords 热词模块 */
+.hotwords {
+    position: absolute;
+    top: 66px;
+    left: 347px;
+}
+
+.hotwords a {
+    margin: 0 10px;
+}
+
+/* shopcar 购物车模块 */
+.shopcar {
+    position: absolute;
+    top: 25px;
+    left: 995px;
+    width: 140px;
+    height: 36px;
+    border: 1px solid #dfdfdf;
+    background-color: #f7f7f7;
+    line-height: 34px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
+
+.shopcar a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.shopcar a::before {
+    content: '\e93a';
+    font-family: 'icomoon';
+    margin-right: 5px;
+    color: #b1191a;
+}
+
+.shopcar a::after {
+    content: '\e920';
+    font-family: 'icomoon';
+    margin-left: 10px;
+}
+
+.shopcar .count {
+    position: absolute;
+    top: -4px;
+    left: 105px;
+    height: 14px;
+    color: #fefefe;
+    background-color: #b1191a;
+    padding: 0 5px;
+    border-radius: 7px 7px 7px 0;
+    line-height: 14px;
+} 
+
+/* nav模块 */
+.nav {
+    height: 47px;
+    border-bottom: 2px solid #b1191a;
+}
+
+.dropdown {
+    width: 210px;
+    height: 45px;
+    background-color: #b1191a;
+}
+
+.dropdown .dt {
+    width: 100%;
+    height: 100%;
+    line-height: 45px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+}
+
+.dropdown .dd {
+    width: 100%;
+    height: 465px;
+    margin-top: 2px;
+    background-color: #c81623;
+}
+
+.dropdown .dd ul li {
+    position: relative;
+    height: 31px;
+    margin-left: 2px;
+    padding: 0 10px;
+    line-height: 31px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.dropdown .dd ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.dropdown .dd ul li:hover {
+    background-color: #f7f7f7;
+}
+
+.dropdown .dd ul li a:hover {
+    color: #c81623;
+}
+
+ul {
+    border-width: 0;
+}
+
+.more_item ::after {
+    position: absolute;
+    right: 10px;
+    content: '\e920';
+    font-family: 'icomoon';
+}
+
+.navitems ul {
+    margin-left: 15px;
+}
+
+.navitems ul li {
+    float: left;
+}
+
+.navitems ul li a {
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 25px;
+    font-size: 16px;
+    color: #333;
+}
+
+.navitems ul li a:hover {
+    color: #c81623;
+}
+
+/* 底部模块制作 */
+.footer {
+    height: 417px;
+    background-color: #f5f5f5;
+    padding-top: 30px;
+}
+
+.mod_service {
+    height: 80px;
+    border-bottom: 1px solid #ededed;
+}
+
+.mod_service ul li {
+    float: left;
+    width: 240px;
+    height: 50px;
+    padding-left: 35px;
+}
+
+.mod_service ul li h5 {
+    float: left;
+    width: 50px;
+    height: 50px;
+    background: url(../images/icons.png) no-repeat;
+}
+
+.mod_service ul li:nth-child(1)  h5 {
+    background-position: -252px -2px;
+}
+
+.mod_service ul li:nth-child(2) h5 {
+    background-position: -254px -53px;
+}
+
+.mod_service ul li:nth-child(3) h5 {
+    background-position: -256px -105px;
+}
+
+.mod_service ul li:nth-child(4) h5 {
+    background-position: -257px -156px;
+}
+
+.mod_service ul li:nth-child(5) h5 {
+    background-position: -256px -209px;
+}
+
+.mod_service ul li div {
+    float: left;
+    height: 50px;
+    margin: 5px;
+}
+
+.mod_service ul li div h4 {
+    font-size: 14px;
+    color: #333;
+}
+
+.mod_service ul li div p {
+    font-size: 12px;
+    color: #666;
+    font-family: 'SimSum';
+}
+
+.mod_help {
+    height: 186px;
+    border-bottom: 1px solid #ededed;
+    margin-left: 50px;
+}
+
+.mod_help dl {
+    float: left;
+    width: 200px;
+    margin-top: 16px; 
+}
+
+.mod_help .help_center {
+    width: 90px;
+}
+
+.mod_help dl dt {
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #333;
+}
+
+.mod_help dl dd {
+    line-height: 20px;
+    font-size: 12px;
+    color: #666;
+    font-family: 'SimSun';
+}
+
+.help_center img {
+    width: 90px;
+    height: 90px;
+}
+
+.help_center {
+    text-align: center;
+}
+
+.mod_help .help_center dd {
+    font-size: 12px;
+    color: #333;
+}
+
+.mod_help .help_center dd:nth-child(3) {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #333;
+}
+
+.mod_copyright {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 16px;
+}
+
+.links {
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+.links a {
+    margin: 0 10px;
+}
+

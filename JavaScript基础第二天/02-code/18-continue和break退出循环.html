@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>continue和break退出循环</title>
+</head>
+<body>
+    <!-- <script>
+        // 打印5句话
+        let i = 1;
+        while (i <= 5) {
+            if (i === 3) break; // 退出整个循环
+            console.log(`我要吃第${i}个包子`);
+            i++;
+        }
+    </script> -->
+    <script>
+        // 打印5句话
+        let i = 1;
+        while (i <= 5) {
+            if (i === 3) {
+                i++;
+                continue;
+            }; // 结束本次循环 继续下一轮循环
+            console.log(`我要吃第${i}个包子`);
+            i++;
+        }
+    </script>
+</body>
+</html>

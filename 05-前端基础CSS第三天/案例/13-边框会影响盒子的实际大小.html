@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>边框会影响盒子的实际大小</title>
+    <style>
+        /* 我们需要一个 200 * 200 的盒子，但是这个盒子有 10 像素的红色边框 */
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 10px solid red;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
