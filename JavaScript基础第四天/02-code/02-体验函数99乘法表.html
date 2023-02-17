@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>体验函数99乘法表</title>
+    <style>
+        table {
+            margin: 0 auto;
+            width: 600px;
+            height: 400px;
+            text-align: center;
+        }
+        span {
+            display: inline-block;
+            width: 80%;
+            border: 1px solid pink;
+            border-radius: 5px;
+            padding: 5px;
+            box-shadow: 2px 2px 2px pink;
+            color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function multipleSheet() { 
+            document.write('<table>');
+            // 1. 外层循环控制行数
+            for (let i = 1; i <= 9; i++) {
+                document.write('<tr>');
+                for (let j = 1; j <= i; j++) {
+                    document.write(`<td><span>${j}×${i}=${i * j}</span></td>`);
+                }
+                document.write('</tr>');
+            }
+            document.write('</table>');
+        }
+        multipleSheet();
+        multipleSheet();
+        multipleSheet();
+    </script>
+</body>
+</html>

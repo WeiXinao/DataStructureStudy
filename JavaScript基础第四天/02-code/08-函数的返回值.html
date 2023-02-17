@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的返回值</title>
+</head>
+<body>
+    <script>
+        // 函数的返回值
+        function fn() { 
+            return 20;
+        }
+        // fn(); 相当于执行了 fn() = 20
+        // fu() 是调用者
+        // console.log(fn());
+        let res = fn();
+        // let num = prompt('请输入数字');
+        console.log(res);
+
+        // 函数求和的写法
+        function getTotalPrice(x, y) { 
+            return x + y;
+            // return 后面的代码不会被执行
+        }
+        let sum = getTotalPrice(1, 2);
+        console.log(sum);
+        console.log(sum);
+
+        function fn() { 
+
+        }
+        let re = fn();
+        console.log(re); // undefined
+        
+    </script>
+</body>
+</html>
