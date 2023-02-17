@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打印五行五列小星星</title>
+</head>
+<body>
+    <!-- <script>
+        // 外层循环打印行数
+        for (let i = 0; i < 5; i++) {
+            // 里层循环打印几个小星星
+            for (let j = 0; j < 5; j++) {
+                document.write('★');
+            }
+            // 进行换行显示
+            document.write('<br>')
+        }
+    </script> -->
+    <script>
+        let row = +prompt('请输入行数');
+        let col = +prompt('请输入列数');
+        // 外层打印行数
+        for (let i = 0; i < row; i++) {
+            for (let j = 0; j < col; j++) {
+                document.write('★');
+            }
+            document.write('<br>')
+        }
+        // 里层循环打印几个小星星
+    </script>
+
+</body>
+</html>

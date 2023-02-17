@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>综合案例-根据数据生成柱形图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            margin: 100px auto;
+            border: 1px solid pink;
+            border-top: 0;
+            border-right: 0;
+        }
+        .box>div {
+            position: relative;
+            float: left;
+            width: 100px;
+            height: 100%;
+            margin: 0 20px;
+        }
+
+        .box div h2 {
+            position: absolute;
+            bottom: -45px;
+            left: 13px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .column {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: pink;
+        }
+        .column p {
+            text-align: center;
+            margin-top: -25px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box">
+        
+        <div>
+            <h2>第1季度</h2>
+            <div class="column">
+                <p>25%</p>
+            </div>
+        </div>
+        <div>
+            <h2>第1季度</h2>
+            <div class="column">
+                <p>25%</p>
+            </div>
+        </div>
+        <div>
+            <h2>第1季度</h2>
+            <div class="column">
+                <p>25%</p>
+            </div>
+        </div>
+    </div> -->
+    <script>
+        let arr = [];
+        for (let i = 0; i < 4; i++) {
+            arr.push(prompt(`请输入第${i + 1}季度的数据`));
+        }
+        document.write('<div class="box">')
+        for (let i = 0; i < 4; i++) {
+            document.write(`<div>
+                                <div class="column" style="height: ${arr[i]}px">
+                                    <p>${arr[i]}</p>   
+                                </div>
+                                <h2>第${i + 1}季度</h2>
+                            </div>`)
+        }
+        document.write('</div>')
+    </script>
+</body>
+</html>
