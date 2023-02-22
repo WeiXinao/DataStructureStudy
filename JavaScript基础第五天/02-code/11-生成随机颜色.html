@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成随机颜色</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        function getRandomColor(flag) { 
+            let res = '';
+            if (flag === 'true' || flag === '') {
+                res += '#';
+                for (let i = 0; i < 3; i++) {
+                    let int16 = Math.floor(Math.random() * 256).toString(16);
+                    if (int16 < 10) int16 = '0' + int16;
+                    res += int16; 
+                }
+            } else if (flag === 'false') {
+                res += 'rgb(';
+                let int10Arr = [];
+                for (let i = 0; i < 3; i++) {
+                    let int10 = Math.floor(Math.random() * 256);
+                    int10Arr.push(int10);
+                }
+                res += int10Arr.join(',');
+                res += ')';
+            }
+            return res;
+        }
+        let colorType = prompt('请输入想要转换的类型：');
+        // console.log(colorType);    
+        // document.write(getRandomColor(colorType));
+        
+        const div = document.querySelector('div');
+        div.style.backgroundColor = getRandomColor(colorType);
+    </script>
+</body>
+</html>

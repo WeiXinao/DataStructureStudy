@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字游戏-设定次数</title>
+</head>
+<body>
+    <script>
+        // 1. 随机生成一个数字 1~10
+        let randNum = Math.floor(1 + Math.random() * 10);
+        // 2. 用户输入一个值
+        let num;
+        for (let i = 0; i < 3; i++) {
+            num = +prompt('请输入数字');
+            if (randNum === num) {
+                alert('恭喜你，猜对了');
+                break;
+            }
+            if (num > randNum) alert('猜大了');
+            if (num < randNum) alert('猜小了');
+        }
+        if (randNum !== num) {
+            alert('次数耗尽，挑战失败');
+        }
+    </script>
+</body>
+</html>

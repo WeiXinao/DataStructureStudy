@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数表达式</title>
+</head>
+<body>
+    <script>
+        let num = 10;
+        console.log(num);
+        // fn(1, 2); // err
+        // 1. 函数表达式
+        let fn = function(x, y) {
+            // console.log('我是函数表达式');
+            console.log(x + y);
+        }
+               
+
+        // 函数表达式 和 具名函数的不同 function fn() {}
+        // 1. 具名函数的调用可以写到任何位置
+        // 2. 函数表达式，必须先声明函数表达式，后调用
+        // function fun() { 
+        //     console.log(1);
+        // }
+        // fun();
+        
+    </script>
+</body>
+</html>

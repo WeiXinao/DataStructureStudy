@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逻辑中断</title>
+</head>
+<body>
+    <script>
+        function fn(x, y) {
+            // 都是假，则返回最后一个假值
+            x = x || 0;
+            y = y || 0;
+            console.log(x + y);
+        }
+        fn(1, 2); // 3
+        fn(); // 0
+        let age = 18;
+        // age++ 不执行 一假则假
+        // console.log(false && age++); // false
+        // console.log(age); // 18
+
+        console.log(true || age++); // true
+        console.log(age); // 18
+        
+        // 都是真，则返回最后一个真值
+        console.log(11 && 22); // 22 
+    </script>
+</body>
+</html>

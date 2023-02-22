@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(Boolean('xiaoxin')); // true
+        console.log(Boolean('')); // false
+        console.log('----------------');
+        console.log(Boolean(0)); // false
+        console.log(Boolean(90)); // true
+        console.log(Boolean(-1)); // true
+        console.log('----------------');
+        console.log(Boolean(undefined)); // false
+        console.log(Boolean(null)); // false
+        console.log(Boolean(NaN)); // false 
+        console.log('----------------');
+        
+        if (null) {         
+            console.log(11);
+        }
+        
+        console.log('----------------');
+        console.log('' - 2); // -2
+        console.log(null + 3); // 3
+        console.log(undefined + 3); // NaN
+        // 把 null 和 undefined 都当 false 来看
+        console.log(null == undefined); // true
+        console.log(null === undefined); // false
+        console.log(undefined + ''); // 'undefined'
+        console.log('xiaoxin' - 1); // NaN
+        console.log(null + 1); // 1
+        console.log(undefined + 1); // NaN
+        console.log(NaN + 1); // NaN
+</script>
+</body>
+</html>
