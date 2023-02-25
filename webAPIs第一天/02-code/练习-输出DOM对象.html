@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>输出DOM对象</title>
+</head>
+<body>
+    <ul class="nav">
+        <li>我的首页</li>
+        <li>产品介绍</li>
+        <li>联系方式</li>
+    </ul>
+    <script>
+        // 1. 获取元素
+        const lis = document.querySelectorAll('.nav li');
+        console.log(lis);
+        lis.forEach(element => {
+           console.log(element); // 每个 li 对象  
+        });
+
+        // const p = document.querySelectorAll('.nav');
+        // p[0].style.color = 'red';
+    </script>
+</body>
+</html>

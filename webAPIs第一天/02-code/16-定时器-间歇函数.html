@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器-间歇函数</title>
+</head>
+<body>
+    <!-- <script>
+        
+        setInterval(function () { 
+            console.log('一秒执行一次');
+        }, 1000);
+    </script> -->
+
+    <!-- <script>
+        let n = setInterval('fn()', 1000);
+        console.log(n); // 1
+        // 关闭定时器
+        clearInterval(n)
+        let m = setInterval(function () {
+            console.log(11);
+        }, 2000);
+        console.log(m); // 2 
+    </script> -->
+
+    <script>
+        let i = 1;
+        setInterval(function() {
+            i++;
+            document.writeln(i);
+        }, 200)
+    </script>
+</body>
+</html>
