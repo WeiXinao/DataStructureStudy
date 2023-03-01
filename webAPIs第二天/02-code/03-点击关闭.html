@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击关闭</title>
+    <style>
+        div { 
+            position: relative;
+            width: 300px;
+            height: 100px;
+            background-color: pink;
+            margin: 100px auto;
+            font-weight: 700;
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+        }
+        i {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: skyblue;
+            font-style: normal;
+            font-size: 16px;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad">
+        我是广告
+        <i class="close">×</i>
+    </div>
+    <script>
+        // 1. 获取事件源
+        const close = document.querySelector('.close');
+        const ad = document.querySelector('.ad');
+        close.addEventListener('click', () => ad.style.display = 'none');
+    </script>
+</body>
+</html>

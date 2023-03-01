@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>键盘事件类型</title>
+</head>
+<body>
+    <input type="text">
+    <!-- <script>
+        // 1. 键盘事件
+        const input = document.querySelector('input');
+        input.addEventListener('keydown', () => {
+            console.log('键盘按下了');
+        });
+        input.addEventListener('keyup', () => {
+            console.log('键盘弹起了');
+        })
+    </script> -->
+    <script>
+        // 2. 用户输入文本事件 input
+        const input = document.querySelector('input');
+        input.addEventListener('input', () => {
+            console.log(input.value);
+        })
+    </script>
+</body>
+</html>

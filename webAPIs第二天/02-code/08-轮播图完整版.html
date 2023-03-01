@@ -127,6 +127,62 @@
       { url: './images/slider08.jpg', title: '谁不想和小猫咪贴贴呢！', color: 'rgb(99, 72, 114)' },
     ]
 
+    // 1. 右侧按钮义务
+    // 1.1 获取右侧按钮
+    const footer = document.querySelector('.slider-footer');
+    const slider = document.querySelector('.slider');
+    const next = document.querySelector('.next');
+    const pre = document.querySelector('.prev');
+    const img = document.querySelector('.slider-wrapper img');
+    const p = document.querySelector('.slider-footer p');
+    const lis = document.querySelectorAll('.slider-indicator li');
+    
+    let i = 0;
+    let intervalIndex = 0;
+    const len = sliderData.length;
+    
+    startInterval();
+    slider.addEventListener('mouseleave', () => { 
+      startInterval();
+    });
+    slider.addEventListener('mouseenter', () => {
+      clearInterval(intervalIndex);
+    });
+
+    next.addEventListener('click', () => {
+      i = (i + 1) % len;
+      showData(sliderData, i);
+    });
+    pre.addEventListener('click', () => {
+      i = (i - 1 + len)  % len;
+      showData(sliderData, i);
+    });
+    
+    for (let j = 0; j < lis.length; j++) {
+      lis[j].addEventListener('click', () => {
+        showData(sliderData, j);
+      });
+    }
+
+    function startInterval() {
+      if (intervalIndex != null) {
+        clearInterval(intervalIndex)
+      }
+      intervalIndex = setInterval(() => {
+        // 利用 js 自动调用点击事件 click() 一定加小括号调用函数
+        next.click(); 
+      }, 3000); 
+    }
+
+    function showData(ds, i) {
+      const data = ds[i];
+      img.src = data.url;
+      p.innerText = data.title;
+      const active = document.querySelector('.active');
+      active.classList.remove('active');
+      lis[i].classList.add('active');
+      footer.style.backgroundColor = data.color;
+    }
 
   </script>
 </body>
