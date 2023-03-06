@@ -89,7 +89,30 @@
       <div class="item"><img src="./images/tab04.png" alt="" /></div>
     </div>
   </div>
+  <script>
+    // 1. tabs 模块制作，要给 5 个链接绑定鼠标经过事件
+    // 1.1 获取 a 元素
+    const tabs = document.querySelectorAll('.tab-nav ul li a');
+    const tabContents = document.querySelectorAll('.tab-content .item');
+    // 要给 5 个链接绑定鼠标经过事件
+    for(let i = 0; i < tabs.length; i++) {
+      tabs[i].addEventListener('mouseenter', function () {
+        const activeTab = document.querySelector('.tab-nav ul li .active');
+        // 排他思想
+        // 干掉别人 移除 active 类
+        activeTab.classList.remove('active');
+        // 添加类 active, this 当前的那个 a
+        this.classList.add('active');
 
+        const activeTabContent = document.querySelector('.tab-content .active');
+        // 下面 5 个大盒子 --对应 .item
+        // 干掉别人
+        activeTabContent.classList.remove('active');
+        // 对应序号的那个 item 显示，添加 active 类
+        tabContents[i].classList.add('active');  
+      });
+    }
+  </script>
 </body>
 
 </html>

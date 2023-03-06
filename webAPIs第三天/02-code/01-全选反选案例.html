@@ -75,7 +75,32 @@
     </tr>
   </table>
   <script>
+    // 2. 获取出大复选框外的小复选框
+    const checkboxes = document.querySelectorAll('.ck');
+    // 1. 获取大复选框
+    const selectAll = document.querySelector('#checkAll');
+    checkboxes.forEach(element => {
+      element.addEventListener('click', () => {
+        /* let flag = true;
+          checkboxes.forEach(element => {
+          if (!element.checked) {
+            flag = false;
+            return;
+          }
+        });
+        selectAll.checked = flag; */
+        const selectedBoxes = document.querySelectorAll ('.ck:checked');
+        selectAll.checked = selectedBoxes.length === checkboxes.length;
+      });
+    });
 
+    // 3. 点击大复选框（注册事件）
+    selectAll.addEventListener('click', function () {
+      // 4. 遍历所有的小复选框，让小复选框的 checked = 大复选框的 checked
+      checkboxes.forEach(element => {
+        element.checked = selectAll.checked;
+      });
+    });
   </script>
 </body>
 
