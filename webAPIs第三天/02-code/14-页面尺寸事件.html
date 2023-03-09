@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面尺寸事件</title>
+    <style>
+        div {
+            display: inline-block;
+            /* width: 200px; */
+            height: 200px;
+            padding: 10px;
+            background-color: pink;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div>Lorem ipsum dolor sit amet.lorem5</div>
+    <script>
+        const div = document.querySelector('div');
+        console.log(div.clientWidth);
+        // resize 浏览器窗口大小发生变化的时候触发的事件
+        window.addEventListener('resize', () => {
+            console.log(1);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面滚动事件</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+        div {
+            display: block;
+            margin: 300px;
+            overflow: scroll;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis beatae tempora eligendi totam libero sequi vitae quia maxime est, eaque labore ducimus? Inventore non iusto eligendi, quaerat suscipit iste impedit.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nulla aliquid sed eos incidunt fugit magnam, quia possimus quo facilis officiis similique aut ea a quasi aspernatur voluptate excepturi. Excepturi!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga vitae sunt et nisi perferendis mollitia magni blanditiis, molestias molestiae accusamus reprehenderit! Ipsum illum harum voluptatem et doloremque. Aperiam, beatae perspiciatis!
+    </div>
+</body>
+<script>
+    const div = document.querySelector('div');
+    window.addEventListener('scroll', () => {
+        // console.log('我滚了');
+        // 我想知道页面到底滚了多少像素，被卷曲了多少 scrollTop
+        // 获取 html 元素的写法 document.documentElement
+        // console.log(document.documentElement.scrollTop);
+        const htmlScrollTop = document.documentElement.scrollTop;
+        console.log(htmlScrollTop);
+        if (htmlScrollTop >= 290) {
+            div.style.margin = '0 300px';
+            div.style.position = 'fixed';
+            div.style.top = '10px';
+        } else {
+            div.style.margin = '300px';
+            div.style.position = 'static';
+            div.style.top = '0';
+        }
+    });
+</script>
+<!-- <script>
+    document.querySelector('div')
+            .addEventListener('scroll', function() {
+                // scrollTop 被卷去的头部
+                console.log(this.scrollTop);
+            });
+</script> -->
+</html>

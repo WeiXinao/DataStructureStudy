@@ -215,6 +215,9 @@
 
 /* 楼层区 */
 /* 家用电器模块 */
+.appliance {
+    margin-bottom: 37px;
+}
 .appliance .box-hd {
     height: 30px;
     border-bottom: 2px solid #c81623;
@@ -238,7 +241,6 @@
 
 .appliance .box-bd {
     height: 360px;
-    background-color: pink;
 }
 
 .tab_list_item>div {
@@ -287,6 +289,45 @@
     width: 221px;
 }
 
+.tab_list_item .col_329  a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: url(../upload/tab_item_list02.png) no-repeat center center;
+}
 
+.tab_list_item .col_220, .col_221 {
+    background-color: #fff;
+    border: 1px solid #ededed;
+}
 
+.tab_list_item .col_220 {
+    border-right: 0;
+    border-left: 0;
+}
+
+.tab_list_item .col_220:nth-child(1) a {
+    /* 一般情况下，a 如果包含有宽度的盒子，a 需要转为块级元素 */
+    display: block;
+    width: 100%;
+    height: 181px;
+}
+
+.tab_list_item .col_221 a {
+    display: block;
+    width: 100%;
+}
+
+.tab_list_item .col_221 a:nth-child(1) {
+    height: 181px;
+    border-bottom: 1px solid #ededed;
+}
+
+.tab_list_item .col_221 a:nth-child(2) {
+    height: 179px;
+}
+
+.margin_-1 {
+    margin-left: -1px;
+}
 

@@ -44,7 +44,7 @@
 
         .header {
             position: fixed;
-            top: 0;
+            top: -80px;
             left: 0;
             width: 100%;
             height: 80px;
@@ -75,7 +75,13 @@
         <a href="javascript:;"></a>
     </div>
     <script>
+        const sk = document.querySelector('.sk');
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            const htmlScrollTop = document.documentElement.scrollTop;
+            header.style.top = htmlScrollTop >= sk.offsetTop - 80 ? 0 : '-80px';
 
+        });
     </script>
 </body>
 
