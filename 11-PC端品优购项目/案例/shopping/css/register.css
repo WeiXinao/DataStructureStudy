@@ -56,7 +56,9 @@ header img {
     font-size: 14px;
 }
 
-.reg_form input {
+.reg_form input[type=text],
+.reg_form input[type=password]
+ {
     width: 242px;
     height: 36px;
     border: 1px solid #999;
@@ -81,7 +83,7 @@ header img {
 }
 
 .reg_form .success_icon {
-    background: url(../images/err_icon.png) no-repeat center center;
+    background: url(../images/success.png) no-repeat center center;
 }
 
 .success {
@@ -110,4 +112,32 @@ header img {
 
 .bgc-yellow {
     background-color: #f79100;
+}
+
+.agree {
+    padding-left: 100px;
+}
+
+.agree input {
+    vertical-align: middle;
+}
+
+.agree a {
+    color: #1ba1e6;
+}
+
+.finish {
+    padding-left: 100px;
+    padding-top: 30px;
+}
+
+.finish button {
+    width: 200px;
+    height: 34px;
+    font-size: 14px;
+    color: #fff;
+}
+
+div.footer {
+    background-color: #fff;
 }
