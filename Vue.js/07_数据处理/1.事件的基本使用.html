@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <!-- 
+         事件的基本使用：
+            1. 使用v-on:xxx 或 @xxx 绑定事件，其中 xxx 是事件名；
+            2. 事件的回调需要配置在 methods 对象中，最终会在 vm 上；
+            3. methods 中配置的函数，都是被 Vue 所管理的函数， this指向的是 vm 或 组件示例对象；
+            4. methods 中配置的函数，都是被 Vue 所管理的函数，this 的指向是 vm 或 组件实例对象；
+            5. @click="demo" 和 @click="demo($event)" 效果一致，单后者可以传参；
+     -->
+    <div id="root">
+        <h2>Hello, {{name}}</h2>
+        <!-- <button v-on:click="translate">点我转为中文</button> -->
+        <button @click="translate1">点我转为中文1（不传参）</button>
+        <button @click="translate2($event,66)">点我转为中文2（传参）</button>
+    </div>
+</body>
+<script type="text/javascript">
+    Vue.config.productionTip = false; // 阻止 vue 在启动时生成生产提示。
+
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            name: 'XiaoXin'
+        },
+        methods: {
+            translate1(event) {
+                console.log(this);
+                // console.log(this === vm); // 此处的 this 是 vm
+                // console.log(event.target.innerText); // 拿到发生事件的事件目标
+                alert('你好，小新！'); 
+            },
+            translate2(event, number) {
+                // console.log(this);
+                // console.log(this === vm); // 此处的 this 是 vm
+                // console.log(event.target.innerText); // 拿到发生事件的事件目标
+                alert('你好，小新！！'); 
+                console.log(number, event);
+            }
+            
+        },
+    });
+</script>
+</html>
