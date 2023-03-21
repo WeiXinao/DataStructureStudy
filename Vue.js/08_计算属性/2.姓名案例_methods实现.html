@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>姓名案例_插值语法实现</title>
+    <title>姓名案例_methods实现</title>
     <!-- 引入Vue -->
     <script type="text/javascript" src="../js/vue.js"></script>
 </head>
@@ -15,7 +15,8 @@
     <div id="root">
         姓：<input type="text" v-model="firstName"> <br>
         名：<input type="text" v-model="lastName">  <br>
-        姓名：<span>{{firstName.slice(0, 3)}}-{{lastName}}</span>
+        <!-- 重新解析模板时，插值语法中的方法会被重新调用 -->
+        姓名：<span>{{fullName()}}</span> <br>
     </div>
 </body>
 <script type="text/javascript">
@@ -25,6 +26,12 @@
         data: {
             firstName: '张',
             lastName: '三'
+        },
+        methods: {
+            fullName() {
+                console.log('@---fullName');
+                return `${this.firstName}-${this.lastName}`;
+            }
         }
     });
 </script>

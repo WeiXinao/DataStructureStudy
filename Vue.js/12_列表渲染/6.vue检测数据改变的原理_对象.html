@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>姓名案例_插值语法实现</title>
+    <title>vue检测数据改变的原理_对象</title>
     <!-- 引入Vue -->
     <script type="text/javascript" src="../js/vue.js"></script>
 </head>
@@ -13,18 +13,28 @@
 <body>
     <!-- 准备好一个容器 -->
     <div id="root">
-        姓：<input type="text" v-model="firstName"> <br>
-        名：<input type="text" v-model="lastName">  <br>
-        姓名：<span>{{firstName.slice(0, 3)}}-{{lastName}}</span>
+        <h2>学校名称：{{name}}</h2>
+        <h2>学校地址：{{address}}</h2>
     </div>
 </body>
 <script type="text/javascript">
     Vue.config.productionTip = false; // 阻止 vue 在启动时生成生产提示。
-    new Vue({
+
+    const vm = new Vue({
         el: '#root',
         data: {
-            firstName: '张',
-            lastName: '三'
+            name: '湖北文理学院',
+            address: '湖北省襄阳市襄城区隆重街道隆中路296号',
+            student: {
+                name: 'tom',
+                age: {
+                    realAge: 40,
+                    speakAge: 29
+                },
+                friends: [
+                    { name: 'jerry', age: 35 }
+                ]
+            }
         }
     });
 </script>

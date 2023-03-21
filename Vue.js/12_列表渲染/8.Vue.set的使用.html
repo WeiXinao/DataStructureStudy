@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.set的使用</title>
+    <!-- 引入Vue -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <!-- 准备好一个容器 -->
+    <div id="root">
+        <h2>学校名称：{{name}}</h2>
+        <h2>学校地址：{{address}}</h2>
+        <hr>
+        <h2>学生姓名：{{student.name}}</h2>
+        <h2>学生年龄：{{student.age.realAge}}，对外{{student.age.speakAge}}</h2>
+        <h2>朋友们</h2>
+    </div>
+</body>
+<script type="text/javascript">
+    Vue.config.productionTip = false; // 阻止 vue 在启动时生成生产提示。
+
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            name: '湖北文理学院',
+            address: '湖北省襄阳市襄城区隆重街道隆中路296号',
+            student: {
+                name: 'tom',
+                age: {
+                    realAge: 40,
+                    speakAge: 29
+                },
+                friends: [
+                    { name: 'Jerry', age: 35 },
+                    { name: 'Tony', age: 36 },
+                ]
+            }
+        }
+    });
+</script>
+
+</html>
