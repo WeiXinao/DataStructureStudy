@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo</title>
+    <style>
+        .demo {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">点我创建一个输入框</button>
+    <script>
+        const btn = document.querySelector('#btn');
+        btn.addEventListener('click', () => {
+            const input = document.createElement('input');
+            
+            input.type='text';
+            input.className = 'demo';
+            input.value = '99';
+            input.addEventListener('click', () => {
+                alert(99);
+            });
+
+            document.body.appendChild(input); 
+            input.focus();
+            input.parentElement.style.backgroundColor = 'skyblue';
+            console.log(input.parentElement);
+        });
+    </script>
+</body>
+</html>
