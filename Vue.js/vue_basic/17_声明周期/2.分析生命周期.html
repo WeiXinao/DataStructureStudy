@@ -13,6 +13,7 @@
 <body>
     <!-- 准备好一个容器 -->
     <div id="root" :x='n'>
+        <h2 v-text="n"></h2>
         <h2>当前的 n 值是：{{n}}</h2>
         <button @click="add">点我n+1</button>
         <button @click="bye">点我销毁vm</button>
@@ -32,11 +33,17 @@
         },
         methods: {
             add() {
+                console.log('add');
                 this.n++;
             },
             bye() {
                 console.log('bye');
                 this.$destroy();
+            }
+        },
+        watch: {
+            n() {
+                console.log('n变了');
             }
         },
         beforeCreate() {
@@ -57,8 +64,14 @@
         },
         updated() {
             console.log('updated');
+            this.n = 99;
         },
-
+        beforeDestroy() {
+            console.log('beforeDestroy');
+        },
+        destroyed() {
+            console.log('destroyed');
+        },
     });
 </script>
 

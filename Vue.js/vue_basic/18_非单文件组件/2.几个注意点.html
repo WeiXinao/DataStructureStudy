@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本使用</title>
+    <!-- 引入Vue -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <!-- 
+        几个注意点：
+            1. 关于组件名：
+                一个单词组成：
+                    第一种写法（首字母小写）：school
+                    第二种写法（首字母大写）：School
+                多个单词组成：
+                    第一种写法（kebab-case写法）：my-school
+                    第二种写法（CamelCase命名）：MySchool（需要 Vue 脚手架支持）
+                备注：
+                    （1）.组件名尽可能回避 HTML 中已有的元素名称，例如：h2，H2都不行。
+                    （2）.可以使用 name 配置项指定组件在开发者工具中呈现的名字。
+
+            2. 关于组件标签：
+                第一种写法：<school></school>
+                第二种写法：<school/>
+                备注：不用使用脚手架时，<school/> 会导致后续组件不能渲染。
+
+            3. 一个简写方式：
+                const school = Vue.extend(option) 可以简写为：const school = options
+     -->
+    <!-- 准备好一个容器 -->
+    <div id="root">
+        <hello></hello>
+        <hr>
+        <h1>{{msg}}</h1>
+        <school></school>
+        <hr>
+        <!--  第三步：编写组件标签 -->
+        <H2>123</H2>
+        <hr>
+        <student></student>
+    </div>
+
+    <div id="root2">
+        <hello></hello>
+    </div>
+</body>
+<script type="text/javascript">
+    Vue.config.productionTip = false; // 阻止 vue 在启动时生成生产提示。
+
+    // 第一步：创建组件
+    // 创建 school 组件
+    const s = {
+        // el: '#root', // 组件定义时，一定不要写 el 配置项，因为最终所有的组件都要被一个 vm 管理，由 vm 决定服务于哪个容器
+        name: 'xiaoxin',
+        template:
+        `<div>
+            <h2>学校名称：{{schoolName}}</h2>
+            <h2>学校地址：{{schoolAddress}}</h2>
+            <button @click="showName">点我提示学校名</button>
+        </div>`,
+        data() {
+            return { 
+                schoolName: 'Hubei University of Art and Science',
+                schoolAddress: '湖北襄阳'
+            }
+        },
+        methods: {
+            showName() {
+                alert(this.schoolName);
+            }
+        }
+    };
+
+    // 创建 student 组件
+    const student = Vue.extend({
+        template: 
+        `<div>
+            <h2>学生姓名：{{studentName}}</h2>
+            <h2>学生年龄：{{studentAge}}</h2>
+        </div>`,
+        data() {
+            return {
+                studentName: 'xiaoxin',
+                studentAge: 21
+            }
+        }
+    });
+
+    const hello = Vue.extend({
+        template: 
+        `<div>
+            <h2>你好啊！ {{name}}</h2>    
+        </div>`,
+        data() {
+            return { 
+                name: 'Tom'
+            }
+        }    
+    });
+
+    // 第二步：全局注册组件
+    Vue.component('hello', hello);
+
+    // 创建 vm
+    new Vue({
+        el: '#root',
+        data: {
+            msg: 'hello'
+        },
+        // 第二步：注册组件（局部注册）
+        components: {
+            // school: school,
+            // student: student,
+            student,
+            school: s
+        }
+    });
+
+    new Vue({
+       el: '#root2',
+    });
+    
+</script>
+
+</html>
