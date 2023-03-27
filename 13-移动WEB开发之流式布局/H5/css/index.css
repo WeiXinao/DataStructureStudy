@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    min-width: 320px;
+    max-width: 1080px;
+    margin: 0 auto;
+    font-size: 14px;
+    font-family: -apple-system, Helvetica, sans-serif;
+    color: #666;
+    line-height: 1.5;
+}
+
+.app {
+    height: 44px;
+}
+
+.app ul li {
+    list-style: none;
+    float: left;
+    height: 44px;
+    background-color: #333;
+    text-align: center;
+    line-height: 44px;
+    color: #ffffff; 
+}
+
+.app ul li:nth-child(1) {
+    width: 8%;
+}
+.app ul li:nth-child(1) img {
+    width: 10px; 
+}
+.app ul li:nth-child(2) {
+    width: 10%;
+}
+.app ul li:nth-child(2) img {
+    width: 30px;
+    vertical-align: middle;
+}
+.app ul li:nth-child(3) {
+    width: 57%;
+}
+.app ul li:nth-child(4) {
+    width: 25%;
+    background-color: #f63515;
+}
+
+.search-wrap {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 44px;
+    background-color: #c82519;
+    overflow: hidden;
+    min-width: 320px;
+    max-width: 1080px;
+    
+}
+.search-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 44px;
+}
+.search-btn::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 18px;
+    background: url(../images/s-btn.png) no-repeat;
+    background-size: 20px 18px;
+    margin: 14px 0 0 15px;
+}
+.search-login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 44px;
+    color: #fff;
+    line-height: 44px;
+    font-size: 14px;
+}
+.search {
+    position: relative;
+    height: 30px;
+    background-color: #fff;
+    margin: 0 50px;
+    border-radius: 15px;
+    margin-top: 7px;
+}
+.jd-icon {
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    margin: 8px 0 8px 15px;
+    background: url(../images/jd-icon.png) no-repeat center center;
+    background-size: 20px 15px;
+}
+
+.jd-icon::after {
+     content: "";
+     display: block;
+     position: absolute;
+     right: -7px;
+     width: 1px;
+     height: 15px;
+     background-color: #dddddd;
+}
+
+.sou {
+    position: absolute;
+    top: 8px;
+    left: 50px;
+    width: 18px;
+    height: 15px;
+    background: url(../images/jd-sprites.png) no-repeat -81px 0;
+    background-size: 200px auto;
+}
+
+.bg {
+    position: relative;
+    width: 100%;
+    height: 142px;
+}
+
+.bg::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: -1897px;
+    left: -800px;
+    z-index: -99999;
+    width: 2000px;
+    height: 2000px;
+    background-color: #cd2a1d;
+    border-radius: 1000px
+}
+
+.slider {
+    margin: 44px 12px;
+    overflow: hidden;
+}
+
+.slider img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+

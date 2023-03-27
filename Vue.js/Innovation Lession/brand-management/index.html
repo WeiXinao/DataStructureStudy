@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 导入 bootstrap 的样式表 -->
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <style>
+      :root {
+        font-size: 13px;
+      }
+
+      body {
+        padding: 8px;
+      }
+      #app {
+        width: 80%;
+        margin: 0 auto;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 卡片区域 -->
+      <div class="card">
+        <h5 class="card-header">品牌管理</h5>
+        <div class="card-body">
+          <!-- 添加品牌的表单 -->
+          <div class="form-inline">
+            <div class="input-group mb-2 mr-sm-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">品牌名称</div>
+              </div>
+              <!-- 文本输入框 -->
+              <input type="text" ref="brandInput" class="form-control" v-model.trim="brandName" @keyup.enter="handleAdd" @keyup.esc="brandName = ''" />
+            </div>
+
+            <input type="button" style="margin-left: 5px;" class="btn btn-primary mb-2" @click="handleAdd" value="添加品牌"></input>
+            <input type="button" style="margin-left: 10px;" class="btn btn-primary mb-2" value="搜索"></input>
+          </div>
+        </div>
+      </div>
+
+      <!-- 品牌列表 -->
+    
+      <table class="table table-bordered table-striped mt-2">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>品牌名称</th>
+            <th>状态</th>
+            <th>创建时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <!-- 表格的主体区域 -->
+        <tbody>
+          <!-- 循环渲染表格的每一行数据 -->
+          <tr v-for="(item, index) in list">
+            <td>{{ index + 1 }}</td>
+            <td>{{ item.brandName }}</td>
+            <td>
+              <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" :id="item.id" v-model="item.state" />
+                <label class="custom-control-label" :for="item.id" v-if="item.state">已启用</label>
+                <label class="custom-control-label" :for="item.id" v-else>已禁用</label>
+              </div>
+            </td>
+            <td>{{ formatDate(item.date) }}</td>
+            <td>
+              <a href="#" @click.prevent="handleDelete(item.id)">删除</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+      // 创建 vue 的实例对象
+      const app = Vue.createApp({
+        mounted () {
+          this.$refs.brandInput.focus()
+        },
+        data () {
+          return {
+            brandName: '',
+            nextId: 9,
+            list: [
+              { id: 4, brandName: '李宁', state: true, date: new Date() },
+              { id: 5, brandName: '耐克', state: false, date: new Date() },
+              { id: 8, brandName: '鸿星尔克', state: true, date: new Date() },
+            ]
+          }
+        },
+        methods: {
+          handleDelete (id) {
+            if (!confirm('确认删除该品牌？')) return
+            // 过滤掉当前数组中元素为传入id的元素（相当于删除）
+            this.list = this.list.filter(x => x.id !== id)
+          },
+          handleAdd () {
+            // 判断文本框是否有内容
+            if (this.brandName.length === 0) {
+              alert('请输入要添加的品牌')
+              return
+            }
+
+            // 往数组的最前面插入一条数据
+            this.list.unshift({
+              id: this.nextId,
+              brandName: this.brandName,
+              state: true,
+              date: new Date()
+            })
+            // 下一条数据的id++
+            this.nextId++
+            // 清空文本框
+            this.brandName = ''
+          },
+          formatDate (dateStr) {
+            // 补零的函数
+            function padZero(n) {
+              return n > 9 ? n : '0' + n
+            }
+            const dt = new Date(dateStr)
+
+            const y = dt.getFullYear()
+            const m = padZero(dt.getMonth() + 1)
+            const d = padZero(dt.getDate())
+            // const hh = padZero(dt.getHours())
+            // const mm = padZero(dt.getMinutes())
+            // const ss = padZero(dt.getSeconds())
+            return `${y}-${m}-${d}`
+            // return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+          }
+          // // 添加新的品牌数据
+          // addNewBrand() {
+          //   // 判断品牌名称是否为空
+          //   if (!this.brandname) return alert('品牌名称不能为空！')
+          //   // 添加新的品牌数据
+          //   this.brandlist.push({
+          //     id: this.nextId,
+          //     brandname: this.brandname,
+          //     state: true,
+          //     addtime: new Date(),
+          //   })
+          //   // 重置文本框的值
+          //   this.brandname = ''
+          //   // 让 nextId 自增 +1
+          //   this.nextId++
+          // },
+          // // 根据 Id 删除对应的数据
+          // removeBrand(id) {
+          //   this.brandlist = this.brandlist.filter((x) => x.id !== id)
+          // },
+        },
+      })
+
+      app.mount('#app')
+    </script>
+  </body>
+</html>
