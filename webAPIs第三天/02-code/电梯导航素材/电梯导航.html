@@ -1215,22 +1215,48 @@
     </ul>
   </div>
   <script>
-    // 1. 当页面滚动大于等于 300 像素，就显示 电梯导航
-    const elevator = document.querySelector('div.xtx-elevator');
-    const backTop = document.getElementById('backTop');
-    const entity = document.querySelector('.xtx_entry');
-    // 给页面添加滚动事件
-    window.addEventListener('scroll', () => {
-      const htmlScrollTop = document.documentElement.scrollTop;
-      elevator.style.opacity = htmlScrollTop >= entity.offsetTop ? 1 : 0;
-    });
-    
-    // 点击 “顶部”，返回顶部
-    backTop.addEventListener('click', () => {
-      // scrollTop 可读写
-      // document.documentElement.scrollTop = 0;
-      window.scrollTo(0, 0);
-    });
+    // 第一大模块，页面的滑动可以显示和隐藏
+    (function(){
+      // 1. 当页面滚动大于等于 300 像素，就显示 电梯导航
+      const elevator = document.querySelector('div.xtx-elevator');
+      const backTop = document.getElementById('backTop');
+      const entity = document.querySelector('.xtx_entry');
+      // 给页面添加滚动事件
+      window.addEventListener('scroll', () => {
+        const htmlScrollTop = document.documentElement.scrollTop;
+        elevator.style.opacity = htmlScrollTop >= entity.offsetTop ? 1 : 0;
+      });
+      
+      // 点击 “顶部”，返回顶部
+      backTop.addEventListener('click', () => {
+        // scrollTop 可读写
+        // document.documentElement.scrollTop = 0;
+        window.scrollTo(0, 0);
+      });
+    })();
+
+    // 第二第三都放到另外一个执行函数里面
+    (function(){
+      // 2. 点击页面可以滑动
+      const list = document.querySelector('.xtx-elevator-list');
+      list.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A' && e.target.dataset.name) {
+          // 排他思想
+          // 先移除原来的类 active
+          // 先获取这个active类名的对象
+          const active = document.querySelector('.xtx-elevator-list .active');
+          // 判断 如果原来有 active 类的对象，就移除类，如果开始就没有对象，就不删除，所以不报错
+          if (active) {
+            active.classList.remove('active');
+          } 
+          // 当前元素添加 active
+          e.target.classList.add('active');
+          // 获得自定义属性
+          const offsetTop = document.querySelector(`.xtx_goods_${e.target.dataset['name']}`).offsetTop;
+          document.documentElement.scrollTop = offsetTop; 
+        }
+      });
+    })();
   </script>
 </body>
 

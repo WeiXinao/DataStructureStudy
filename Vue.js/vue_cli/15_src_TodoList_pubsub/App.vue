@@ -31,7 +31,7 @@ export default {
   },
   data() {
       return {
-        todos: JSON.parse(localStorage.getItem('todos')) || []
+        todos: JSON.parse(localStorage.getItem('todos ')) || []
       }
   },
   methods: {
@@ -67,14 +67,6 @@ export default {
         }
       });
     });
-
-    // 更新一个todo
-    this.$bus.$on('updateTodo', (id, title) => {
-      this.todos.forEach(element => {
-        if (element.id === id)
-          element.title = title; 
-      });
-    });
     
     // 删除一个todo
     /* this.$bus.$on('deleteTodo', (id) => {
@@ -85,7 +77,7 @@ export default {
     });
   },
   beforeDestroy() {
-    this.$bus.$off(['checkTodo', 'updateTodo']);
+    this.$bus.$off('checkTodo');
     pubsub.unsubscribe(this.pubId);
   }
 }
@@ -114,13 +106,6 @@ body {
   color: #fff;
   background-color: #da4f49;
   border: 1px solid #bd362f;
-}
-
-.btn-edit {
-  color: #fff;
-  background-color: skyblue;
-  border: 1px solid rgb(96, 198, 238);
-  margin-right: 5px;
 }
 
 .btn-danger:hover {

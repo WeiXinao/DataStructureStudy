@@ -78,9 +78,10 @@
         const sk = document.querySelector('.sk');
         const header = document.querySelector('.header');
         window.addEventListener('scroll', () => {
+            // 当页面滚动到 秒杀模块的时候，就改变 头部的 top 值
+            // 页面被卷去的头部 >= 秒杀模块的位置 offsetTop
             const htmlScrollTop = document.documentElement.scrollTop;
             header.style.top = htmlScrollTop >= sk.offsetTop - 80 ? 0 : '-80px';
-
         });
     </script>
 </body>
